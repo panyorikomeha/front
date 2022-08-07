@@ -25,16 +25,16 @@ const reducer = (state = initialState, action) => {
         case "leftSelect":
             return {
                 leftSelected: index,
+                rightSelected: -1,
                 leftItems: state.leftItems,
-                rightItems: state.rightItems,
-                rightSelected: -1
+                rightItems: state.rightItems
             }
         case "rightSelect":
             return {
+                rightSelected: index,
                 leftSelected: -1,
                 leftItems: state.leftItems,
-                rightItems: state.rightItems,
-                rightSelected: index
+                rightItems: state.rightItems
             }
         case "moveRight":
             let lSelected = state.leftSelected;

@@ -1,17 +1,24 @@
 import { useSelector, useDispatch } from "react-redux"
 
 function LeftSide() {
-  const leftItems = useSelector((state) => state.leftItems)
+  const leftItems = useSelector((state) => state.leftItems);
+  const leftSelected = useSelector((state) => state.leftSelected);
+  const rightSelected = useSelector((state) => state.rightSelected);
   const dispatch = useDispatch();
 
   const selectItem = (index) => {
-    let selected = document.getElementById("left-" + index);
-    selected.style.backgroundColor = "aqua";
-    dispatch({type: "leftSelect", payload: index});
+    if (leftSelected !== -1 || rightSelected !== -1) {
+      resetCursor();
+    }
+    document.getElementById("left-" + index).style.backgroundColor = "aqua";
+    dispatch({ type: "leftSelect", payload: index });
   };
 
   const onClick = () => {
-    dispatch({ type: "moveRight" })
+    if (leftSelected !== -1) {
+      dispatch({ type: "moveRight" });
+      resetCursor();
+    }
   };
 
   return (
@@ -27,6 +34,13 @@ function LeftSide() {
       <button className='moveButton' onClick={() => onClick()}>右へ移動</button>
     </div>
   );
+}
+
+function resetCursor() {
+  let items = document.getElementsByClassName("item");
+  for (let i = 0; i < items.length; i++) {
+    items[i].style.backgroundColor = "transparent";
+  }
 }
 
 export default LeftSide;
