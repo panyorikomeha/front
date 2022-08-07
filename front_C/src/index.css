@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.content{
+  width: 700px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.piece{
+  align-items: center;
+}
+
+.board{
+  width: 300px;
+  height: 600px;
+  border: 1px solid navy;
+}
+
+.item{
+  width: 80%;
+  border-bottom: 1px solid navy;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.moveButton{
+  display: block;
+  padding: 0 20px;
+  font-size: 16px;
+  margin: 30px auto;
+  height:40px;
+  color: white;
+  background-color: navy;
+}
