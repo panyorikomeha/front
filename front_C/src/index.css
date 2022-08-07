@@ -24,9 +24,12 @@ body {
 
 .item{
   width: 80%;
+  height: 25px;
   border-bottom: 1px solid navy;
   text-align: center;
+  padding: 10px 0;
   margin: 10px auto;
+  cursor: pointer;
 }
 
 .moveButton{
@@ -37,4 +40,5 @@ body {
   height:40px;
   color: white;
   background-color: navy;
+  cursor: pointer;
 }

@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import LeftSide from './LeftSide';
 import { Provider } from 'react-redux';
 import store from "./store/store";
+import RightSide from './RightSide';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App/>←ここがコンポーネント app1/ app2/のイメージ？
+    <div className='content'>
+      <LeftSide />
+      <RightSide />
+    </div>
   </Provider>
 );
