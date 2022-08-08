@@ -21,6 +21,7 @@ export default class Board extends Component {
     this.setState({
       list: [...list, name]
     });
+    document.getElementById('textArea').value = '';
   }
 
   remove = (index) => {
@@ -35,7 +36,7 @@ export default class Board extends Component {
 
     return (<div id="content">
       <div id="inputfield">
-        <input className='textArea' type="text" onInput={this.onInput}></input>
+        <input className='textArea' id="textArea" type="text" onInput={this.onInput}></input>
         <button className='addButton' onClick={this.addItem}>追加</button>
       </div>
       <div id="list">
